@@ -1,3 +1,98 @@
+:root {
+  --main-color: #e0ccb2;
+  --clr-2: #bbac99;
+  --clr-3: #c4a088;
+}
+
 html, body {
-  background-color: rebeccapurple;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+header {
+  background-color: var(--clr-2);
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+}
+
+ul button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#content {
+  display: flex;
+  align-items: center;
+  background-color: var(--main-color);
+  padding: 0 1rem;
+}
+
+.main-page {
+  display: flex;
+  gap: 2rem;
+  height: 75vh;
+  background-color: var(--clr-3);
+}
+
+.main-img {
+  height: 100%;
+  width: auto;
+}
+
+.main-text { 
+  height: 100%;
+  margin: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.main-title {
+  font-size: 3rem;
+}
+
+.separator {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.267);
+}
+
+.main-paragraph {
+  font-size: 1.5rem;
+}
+
+.main-btn {
+  padding: 0.5rem 1rem;
+  width: 150px;
+  height: 45px;
+  font-size: 1rem;
+  background: none;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }

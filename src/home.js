@@ -1,4 +1,4 @@
-import img from "./main-img.jpg";
+import img from "./img/main-img.jpg";
 
 export default function createHomePage() {
   const mainPage = document.createElement("div");

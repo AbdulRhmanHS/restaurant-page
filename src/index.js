@@ -1,6 +1,7 @@
 import "./styles.css";
 import createHomePage from "./home";
 import createMenuPage from "./menu";
+import createContactPage from "./contact";
 
 const headerBtns = document.querySelectorAll(".header-btn");
 const home = document.querySelector(".home");
@@ -32,7 +33,7 @@ function showTab(btn, tab) {
 
 showTab(home, createHomePage());
 showTab(menu, createMenuPage());
-showTab(contact, div);
+showTab(contact, createContactPage());
 showTab(about, div);
 
 

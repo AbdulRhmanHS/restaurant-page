@@ -1,7 +1,7 @@
 import falafelImg from "./img/falafel.jpg";
-import chickenImg from "./img/grilled-chicken.png";
-import kunafaImg from "./img/kunafa.png";
-import shawarmaImg from "./img/shawarma.png";
+import chickenImg from "./img/grilled-chicken.jpg";
+import kunafaImg from "./img/kunafa.jpg";
+import shawarmaImg from "./img/shawarma.jpg";
 
 export default function createMenuPage() {
   const menuPage = document.createElement("div");
@@ -66,7 +66,7 @@ export default function createMenuPage() {
       "Shawarma Wrap",
       "Shawarma Wrap",
       "Spiced meat, fresh veggies, and tahini sauce wrapped in warm pita.",
-      "40 EGP"
+      "100 EGP"
     )
   );
 

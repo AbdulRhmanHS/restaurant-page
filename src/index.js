@@ -2,6 +2,7 @@ import "./styles.css";
 import createHomePage from "./home";
 import createMenuPage from "./menu";
 import createContactPage from "./contact";
+import createAboutPage from "./about";
 
 const headerBtns = document.querySelectorAll(".header-btn");
 const home = document.querySelector(".home");
@@ -9,10 +10,6 @@ const menu = document.querySelector(".menu");
 const contact = document.querySelector(".contact");
 const about = document.querySelector(".about");
 const content = document.getElementById("content");
-
-// Just for testing
-const div = document.createElement("div");
-div.textContent = "";
 
 // Make the border fixed to current selected button
 headerBtns.forEach((btn) => {
@@ -34,7 +31,7 @@ function showTab(btn, tab) {
 showTab(home, createHomePage());
 showTab(menu, createMenuPage());
 showTab(contact, createContactPage());
-showTab(about, div);
+showTab(about, createAboutPage());
 
 
 

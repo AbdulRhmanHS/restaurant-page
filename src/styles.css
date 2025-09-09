@@ -168,7 +168,7 @@ p {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
   margin: 2rem 0;
-  padding: 0 2rem;
+  padding: 0 2vw;
   width: 100%;
 }
 
@@ -216,7 +216,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12rem;
+  gap: clamp(1rem, 10vw, 12rem);
   background-color: var(--clr-4);
   height: 75vh;
   padding: 2rem;
@@ -296,6 +296,32 @@ form > button {
   cursor: pointer;
   color: white;
 }
+
+@media (max-width: 900px) {
+  .contact-page {
+    flex-direction: column;
+    height: auto;
+    margin: 2.5rem 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .contact-form {
+    width: 100%;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .name-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 /*Contact page*/
 
 /*About page*/
@@ -346,7 +372,7 @@ form > button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 10rem;
+  padding: 1rem clamp(1rem, 10vw, 10rem);
   box-sizing: border-box;
   text-align: center;
 }
@@ -357,5 +383,18 @@ form > button {
 
 .sub-about-box.l {
   grid-area: sub2;
+}
+
+@media (max-width: 1100px) {
+  .about-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "main"
+    "sub1"
+    "sub2";
+    height: auto;
+    margin: 2.5rem 0;
+  }
 }
 /*About page*/

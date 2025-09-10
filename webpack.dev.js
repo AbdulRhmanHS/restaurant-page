@@ -12,14 +12,12 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     watchFiles: ["./src/template.html"],
-    static: "./dist",
-    port: 8080,
-    open: {
-    app: {
-      name: "google-chrome", // or "firefox", "brave", etc.
+    static: {
+      directory: path.resolve(__dirname, "dist"),
     },
-  },
-
+    port: 8080,
+    open: true,
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -19,21 +19,19 @@ headerBtns.forEach((btn) => {
   });
 });
 
-function showTab(btn, tab) {
+function showTab(btn, tabCreator) {
   btn.addEventListener("click", () => {
-    if (content.firstChild) {
-      content.replaceChildren();
-      content.appendChild(tab);
-    }
+    content.replaceChildren(); // clear old content
+    const tab = tabCreator();  // create new DOM node
+    content.appendChild(tab);  // insert it
   });
 }
 
-showTab(home, createHomePage());
-showTab(menu, createMenuPage());
-showTab(contact, createContactPage());
-showTab(about, createAboutPage());
-
-
+// Pass the functions, not their results
+showTab(home, createHomePage);
+showTab(menu, createMenuPage);
+showTab(contact, createContactPage);
+showTab(about, createAboutPage);
 
 // At start, show the home page
 document.addEventListener("DOMContentLoaded", function() {

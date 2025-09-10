@@ -1,21 +1,16 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-module.exports = {
+module.exports = merge(common, {
   mode: "production",
-  entry: "./src/index.js",
   output: {
     filename: "main.[contenthash].js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
+    assetModuleFilename: "assets/[hash][ext][query]",
     publicPath: "",
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/template.html",
-    }),
     new MiniCssExtractPlugin({
     filename: "[name].[contenthash].css", // creates separate CSS file with cache-busting
     }),
@@ -25,17 +20,6 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-        generator: {
-          filename: "assets/[hash][ext][query]",
-        },
       },
     ],
   },
@@ -48,4 +32,4 @@ module.exports = {
       chunks: "all",
     },
   },
-};
+});
